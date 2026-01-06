@@ -32,3 +32,9 @@ run:
 	gofumpt -l -w .
 	CGO_ENABLED=0 go build  -trimpath -ldflags "-s -w" -ldflags "$(LDFLAGS)" -v .
 	./gf
+
+install:
+	go mod tidy
+	gofumpt -l -w .
+	CGO_ENABLED=0 go build  -trimpath -ldflags "-s -w" -ldflags "$(LDFLAGS)" -v .
+	sudo cp -f gf /usr/local/bin/gf
