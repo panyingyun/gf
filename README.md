@@ -12,7 +12,22 @@
 
 ## 安装
 
-### 从源码编译
+### 方法一：使用 go install（推荐）
+
+下载最新的release包 
+- https://github.com/panyingyun/gf/releases
+
+### 方法二：使用 go install（推荐）
+
+如果你已经安装了 Go 1.22 或更高版本，可以直接使用 `go install` 命令安装：
+
+```bash
+go install github.com/panyingyun/gf@latest
+```
+
+安装完成后，确保 `$GOPATH/bin` 或 `$HOME/go/bin` 在你的 `PATH` 环境变量中，然后就可以直接使用 `gz` 命令了。
+
+### 方法三：从源码编译（不推荐）
 
 确保已安装 Go 1.22.5 或更高版本：
 
