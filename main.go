@@ -112,7 +112,6 @@ func searchInFiles(pattern, rootDir string) {
 
 		return nil
 	})
-
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "错误: 遍历目录时发生错误: %v\n", err)
 		os.Exit(1)
@@ -134,7 +133,6 @@ func searchInFilenames(pattern, rootDir string) {
 
 		return nil
 	})
-
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "错误: 遍历目录时发生错误: %v\n", err)
 		os.Exit(1)
