@@ -23,8 +23,8 @@ func main() {
 	// 定义命令行参数
 
 	versionFlag := flag.Bool("v", false, "显示版本号")
-	flag.StringVar(&filePattern, "f", "", "文件内容搜索模式，后跟搜索字符串")
-	flag.StringVar(&filenamePattern, "g", "", "文件名搜索模式，后跟搜索字符串")
+	flag.StringVar(&filePattern, "g", "", "文件内容搜索模式，后跟搜索字符串")
+	flag.StringVar(&filenamePattern, "f", "", "文件名搜索模式，后跟搜索字符串")
 
 	flag.Parse()
 
