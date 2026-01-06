@@ -9,16 +9,29 @@ import (
 	"strings"
 )
 
+// 这些变量将在编译时通过 -ldflags 注入
+var (
+	Version   = "v0.0.0"
+	GitCommit = "unknown"
+	BuildTime = "unknown"
+)
+
 func main() {
 	var filePattern string
 	var filenamePattern string
 	var targetDir string
-
 	// 定义命令行参数
+
+	versionFlag := flag.Bool("v", false, "显示版本号")
 	flag.StringVar(&filePattern, "f", "", "文件内容搜索模式，后跟搜索字符串")
 	flag.StringVar(&filenamePattern, "g", "", "文件名搜索模式，后跟搜索字符串")
 
 	flag.Parse()
+
+	if *versionFlag {
+		fmt.Printf("gf %s, build at %s, commit %s\n", Version, BuildTime, GitCommit)
+		os.Exit(0)
+	}
 
 	// 检查参数
 	args := flag.Args()
@@ -127,4 +140,3 @@ func searchInFilenames(pattern, rootDir string) {
 		os.Exit(1)
 	}
 }
-
