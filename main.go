@@ -29,7 +29,9 @@ func main() {
 	flag.Parse()
 
 	if *versionFlag {
-		fmt.Printf("gf %s, build at %s, commit %s\n", Version, BuildTime, GitCommit)
+		fmt.Println("Version: ", Version)
+		fmt.Println("BuildTime: ", BuildTime)
+		fmt.Println("GitCommit: ", GitCommit)
 		os.Exit(0)
 	}
 
